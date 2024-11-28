@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>220</x>
+      <y>160</y>
+      <w>265</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.agregar::PanelBotonesAgregar
+--
+-CREAR = "nuevo": String
+-CERRAR = "ver": String
+-butNuevo: JButton
+-butCerrar: JButton
+-ventanaPrincipal: VentanaAgregarRestaurante
+--
++PanelBotonesAgregar(VentanaAgregarRestaurante ventanaPrincipal): ctor
++actionPerformed(ActionEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5</x>
+      <y>275</y>
+      <w>225</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.agregar::PanelEditarRestaurante
+--
+-txtNombre: JTextField
+-cbbCalificacion: JComboBox&lt;String&gt;
+-cbbVisitado: JComboBox&lt;String&gt;
+--
++PanelEditarRestaurante(): ctor
++getVisitado(): boolean
++getCalificacion(): int
++getNombre(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>5</x>
+      <y>160</y>
+      <w>210</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.agregar::PanelMapaAgregar
+--
+-labMapa: JLabel
+-x: int
+-y: int
+--
++PanelMapaAgregar(): ctor
++getCoordenadas(): int[]
++paint(Graphics g): void
++mouseClicked(MouseEvent e): void
++mousePressed(MouseEvent e): void
++mouseReleased(MouseEvent e): void
++mouseEntered(MouseEvent e): void
++mouseExited(MouseEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>235</x>
+      <y>275</y>
+      <w>240</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.agregar::VentanaAgregarRestaurante
+--
+-panelDetalles: PanelEditarRestaurante
+-panelBotones: PanelBotonesAgregar
+-panelMapa: PanelMapaAgregar
+-ventanaPrincipal: VentanaPrincipal
+--
++VentanaAgregarRestaurante(VentanaPrincipal principal): ctor
++agregarRestaurante(): void
++cerrarVentana(): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1345</x>
+      <y>180</y>
+      <w>210</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.mapa::PanelMapaVisualizar
+--
+-labMapa: JLabel
+-restaurantes: List&lt;Restaurante&gt;
+--
++PanelMapaVisualizar(): ctor
++paint(Graphics g): void
++actualizarMapa(List&lt;Restaurante&gt; nuevosRestaurantes): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1035</x>
+      <y>180</y>
+      <w>305</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.mapa::VentanaMapa
+--
+-VISITADOS = "VISITADOS": String
+-TODOS = "TODOS": String
+-panelMapa: PanelMapaVisualizar
+-radioTodos: JRadioButton
+-radioVisitados: JRadioButton
+-ventanaPrincipal: VentanaPrincipal
+--
++VentanaMapa(VentanaPrincipal ventanaPrincipal, List&lt;Restaurante&gt; restaurantes): ctor
++actionPerformed(ActionEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>815</x>
+      <y>160</y>
+      <w>195</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.principal::PanelBotones
+--
+-NUEVO = "nuevo": String
+-VER = "ver": String
+-butNuevo: JButton
+-butVerTodos: JButton
+-ventanaPrincipal: VentanaPrincipal
+--
++PanelBotones(VentanaPrincipal ventanaPrincipal): ctor
++actionPerformed(ActionEvent e): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>515</x>
+      <y>295</y>
+      <w>265</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.principal::PanelDetallesRestaurante
+--
+-labNombre: JLabel
+-labCalificacion: JLabel
+-chkVisitado: JCheckBox
+--
++PanelDetallesRestaurante(): ctor
+-actualizarRestaurante(String nombre, int calificacion, boolean visitado): void
++actualizarRestaurante(Restaurante r): void
+-buscarIconoCalificacion(int calificacion): ImageIcon
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>785</x>
+      <y>295</y>
+      <w>225</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.principal::PanelLista
+--
+-listaDeRestaurantes: JList&lt;Restaurante&gt;
+-dataModel: DefaultListModel&lt;Restaurante&gt;
+-ventanaPrincipal: VentanaPrincipal
+--
++PanelLista(VentanaPrincipal ventanaPrincipal): ctor
++actualizarRestaurantes(List&lt;Restaurante&gt; restaurantes): void
++valueChanged(ListSelectionEvent e): void
++seleccionarRestaurante(Restaurante restaurante): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>515</x>
+      <y>160</y>
+      <w>295</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.principal::VentanaPrincipal
+--
+-mundo: Diario
+-pBotones: PanelBotones
+-pDetalles: PanelDetallesRestaurante
+-pLista: PanelLista
+-ventanaMapa: VentanaMapa
+-ventanaAgregar: VentanaAgregarRestaurante
+--
++VentanaPrincipal(Diario elDiario): ctor
++mostrarVetanaNuevoRestaurante(): void
++mostrarVentanaMapa(): void
++agregarRestaurante(String nombre, int calificacion, int x, int y, boolean visitado): void
++getRestaurantes(boolean completos): List&lt;Restaurante&gt;
+-actualizarRestaurantes(): void
++cambiarRestauranteSeleccionado(Restaurante seleccionado): void
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>430</y>
+      <w>210</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.mundo::Diario
+--
+-restaurantes: List&lt;Restaurante&gt;
+--
++Diario(): ctor
++getRestaurantes(boolean completos): List&lt;Restaurante&gt;
++agregarRestaurante(Restaurante restaurante): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>515</x>
+      <y>430</y>
+      <w>270</w>
+      <h>115</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.mundo::Restaurante
+--
+-nombre: String
+-calificacion: int
+-coordenadaX: int
+-coordenadaY: int
++visitado: boolean
+--
++Restaurante(String nombre, int calificacion, int x, int y, boolean visitado): ctor
++getNombre(): String
++getCalificacion(): int
++getX(): int
++getY(): int
++isVisitado(): boolean
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>145</y>
+      <w>490</w>
+      <h>225</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.agregar
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1030</x>
+      <y>165</y>
+      <w>530</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.mapa
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>510</x>
+      <y>145</y>
+      <w>505</w>
+      <h>245</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.interfaz.principal
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>510</x>
+      <y>415</y>
+      <w>495</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>uniandes.dpoo.swing.mundo
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
